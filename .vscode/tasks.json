@@ -1,0 +1,23 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"command": "clear;cargo build --release",
+			"group": "build",
+			"label": "Cargo build",
+		},
+		{
+			"type": "shell",
+			"command": "clear;cargo run --release",
+			"group": "build",
+			"label": "Cargo build/run"
+		},
+		{
+			"type": "shell",
+			"command": "clear;cargo build --release;cd target/thumbv4t-none-eabi/release;agb-gbafix bevy-gba-template",
+			"group": "build",
+			"label": "Cargo build + GBA Release"
+		}
+	]
+}

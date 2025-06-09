@@ -1,0 +1,35 @@
+[package]
+name = "bevy-gba-template"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+name = "lib"
+test = false
+doctest = false
+bench = false
+
+[[bin]]
+name = "bevy-gba-template"
+test = false
+doctest = false
+bench = false
+
+[dependencies]
+agb = "0.21.3"
+bevy = { version = "0.16.0", default-features = false, features = ["bevy_state"]}
+bevy_mod_gba = "0.1.0"
+log = { version = "0.4", default-features = false }
+
+[patch.crates-io]
+agb = { git = "https://github.com/refnil/agb", branch = "master" }
+
+[profile.dev]
+opt-level = 3
+lto = "fat"
+debug = true
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+debug = true
